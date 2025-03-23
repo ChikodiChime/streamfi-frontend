@@ -60,8 +60,8 @@ const Navbar = () => {
             />
           </div>
 
-          {/* Desktop Menu */}
-          <ul className="hidden lg:flex space-x-3 text-xs lg:text-sm">
+          {/* Desktop Menu  */}
+          <ul className="hidden max-[839px]:hidden min-[840px]:flex space-x-3 text-xs md:text-sm">
             {navLinks.map((link, index) => (
               <li key={index}>
                 <Link
@@ -81,14 +81,13 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* Get Started Button */}
-          <button className="hidden lg:block bg-white text-[#1E1E1E] px-4 py-2 rounded-lg font-medium">
+          <button className="hidden min-[840px]:block bg-white text-[#1E1E1E] px-4 py-2 rounded-lg font-medium">
             Get started
           </button>
 
           {/* Mobile Menu Button */}
           <motion.button 
-            className="lg:hidden bg-[#B8B8B82E] backdrop-blur-lg rounded-lg px-3 py-1"
+            className="min-[840px]:hidden bg-[#B8B8B82E] backdrop-blur-lg rounded-lg px-3 py-1"
             onClick={() => setIsOpen(!isOpen)}
             whileTap={{ scale: 0.95 }}
           >
@@ -118,11 +117,11 @@ const Navbar = () => {
           </motion.button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu*/}
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="lg:hidden w-full overflow-hidden"
+              className="min-[840px]:hidden w-full overflow-hidden"
               initial="closed"
               animate="open"
               exit="closed"
